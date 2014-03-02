@@ -8,7 +8,7 @@ require "#{File.dirname(__FILE__)}/mp3.rb"
 describe ID3 do
 
   before (:each) do
-    @id3 = ID3.new("02_Rumour_Has_It.mp3")
+    @id3 = ID3.new("./02_Rumour_Has_It.mp3")
   end
 	
   it "should correctly identify the Artist" do
@@ -24,7 +24,7 @@ describe ID3 do
   end
 
   it "should correctly idenfity the track number" do
-  	@id3.track.should eq 2
+  	@id3.track.should eq "2/11"
   end
 
   it "should correctly idenfity the file name of the song" do
@@ -32,15 +32,15 @@ describe ID3 do
   end
 
   it "should correctly identify the path to the file" do
-  	@id3.path.should eq XXX
+  	@id3.path.should eq "."
   end
 
   it "should correctly identify the year of the song" do
-  	@id3.path.should eq "2011"
+  	@id3.year.should eq "2011"
   end
 
   it "should correctly identify the length of the song" do
-  	@id3.time.should eq "YYY"
+  	@id3.time.should eq nil #didn't have that value set on this song
   end
 
   it "should correctly identify the ID3 flags" do
