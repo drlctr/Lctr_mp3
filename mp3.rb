@@ -93,7 +93,6 @@ class ID3
 
         eval("self.#{FRAMES[type]} = frm")
 
-
      	else
     		puts "#{type} does not exist"
     	end
@@ -103,14 +102,14 @@ class ID3
   end
 
   def set_file
-  	self.path = File.dirname(@file)
-  	self.mp3_file = File.basename(@file)
+  	@path = File.dirname(@file)
+  	@mp3_file = File.basename(@file)
   	puts "path = #{self.path}"
   	puts "file = #{self.mp3_file}"
   end
 
   def set_flag(flags)
-  	puts "flags = #{flags.to_s(2).rjust(8,"0")[0..2]} class = #{flags.class}"
+  	puts "flags = #{flags.to_s(2).rjust(8,"0")[0..2]}"
   	self.flags = flags
   end
 

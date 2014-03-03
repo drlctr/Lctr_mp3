@@ -44,7 +44,7 @@ describe ID3 do
   end
 
   it "should correctly identify the ID3 flags" do
-  	@id3.flags.should eq "XXX00000"
+  	@id3.flags.should eq "000"
   end
 
   it "should correctly identify the ID3 tag version" do
