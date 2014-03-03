@@ -16,6 +16,7 @@ class ID3
 		tag = get_tag(tag_size)
 		get_frames(tag)
 		set_file
+		set_flag(header[5])
 	end
 
 	def get_tag_header
@@ -106,6 +107,11 @@ class ID3
   	self.mp3_file = File.basename(@file)
   	puts "path = #{self.path}"
   	puts "file = #{self.mp3_file}"
+  end
+
+  def set_flag(flags)
+  	puts "flags = #{flags.to_s(2).rjust(8,"0")[0..2]} class = #{flags.class}"
+  	self.flags = flags
   end
 
 
