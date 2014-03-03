@@ -7,9 +7,6 @@ class ID3
 	attr_accessor :mp3_file, :song_title, :album_title, :artist, :track, :year, :time, :version, :flags, :path
 
 	def initialize(file)
-		unless File.exists?(file) then 
-			raise "That file does not exist!"
-		end
 		@file = file
 		header = get_tag_header 
 		tag_size = parse_header(header)
