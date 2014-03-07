@@ -4,7 +4,7 @@ require './mp3_frame_ids.rb'
 
 class ID3
 
-	attr_accessor :mp3_file, :song_title, :album_title, :artist, :track, :year, :time, :version, :flags, :path
+	attr_accessor :mp3_file, :song_title, :album_title, :artist, :track, :year, :song_length, :version, :flags, :path
 
 	def initialize(file)
 		@file = file
@@ -24,7 +24,7 @@ class ID3
 				when 0..4
 			    header << ch.chr
 			  when 5
-			  	header << ch
+			  	header << ch.to_s(2)[0..2]
 			  when 6..9
 			  	if ch > 128
 			  		raise "Header error:  reported tag size too large"
@@ -86,12 +86,10 @@ class ID3
         fr_size = fr_size_str.to_i(2)
         frm = tag[loc+10,fr_size].gsub(/\u0000/,"")
 
-        puts "type: #{type} loc: #{loc} size:  #{fr_size} data:  #{frm}"
-
         eval("self.#{FRAMES[type]} = frm")
 
      	else
-    		puts "#{type} does not exist"
+    		eval("self.#{FRAMES[type]} = nil")
     	end
 
     end
@@ -101,17 +99,11 @@ class ID3
   def set_file
   	@path = File.dirname(@file)
   	@mp3_file = File.basename(@file)
-  	puts "path = #{self.path}"
-  	puts "file = #{self.mp3_file}"
   end
 
   def set_flag(flags)
-  	puts "flags = #{flags.to_s(2).rjust(8,"0")[0..2]}"
-  	self.flags = flags
+  	@flags = flags
   end
 
 
 end
-
-
-   @id3 = ID3.new(ARGV[0])
