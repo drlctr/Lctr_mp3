@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.licenses		= ['MIT license (MIT)']
   s.email				= 'drlctr@gmail.com'
   s.homepage		= 'http://rubygems.org/gems/lctr_mp3_gem'
-  s.files				= ["lib/lctr_mp3.rb","lib/id3_frame_ids.rb"]
+  s.files				= ["Gemfile", "Rakefile.rb", "lib/lctr_mp3.rb","lib/id3_frame_ids.rb","spec/lctr_mp3_spec.rb", "spec/.rspec"]
 end
