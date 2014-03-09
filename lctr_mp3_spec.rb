@@ -3,7 +3,7 @@
 #
 #N. Woodward, 18 Feb 2014
 
-require "#{File.dirname(__FILE__)}/mp3.rb"
+require "./lib/lctr_mp3.rb"
 
 describe ID3 do
 
@@ -44,17 +44,11 @@ describe ID3 do
   end
 
   it "should correctly identify the ID3 flags" do
-  	@id3.flags.should eq "000"
+  	@id3.flags.should eq "111"  #this value set in tag with hex editor
   end
 
   it "should correctly identify the ID3 tag version" do
   	@id3.version.should eq "2.3"
   end
-  
-
-
-
-
-
 
 end
