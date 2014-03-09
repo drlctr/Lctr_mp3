@@ -4,6 +4,7 @@
 #N. Woodward, 18 Feb 2014
 
 #require $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+
 require_relative '../lib/lctr_mp3.rb'
 
 describe ID3 do
