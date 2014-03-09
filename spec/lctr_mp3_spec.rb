@@ -3,12 +3,13 @@
 #
 #N. Woodward, 18 Feb 2014
 
-require "../lib/lctr_mp3.rb"
+#require $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+require_relative '../lib/lctr_mp3.rb'
 
 describe ID3 do
 
   before (:each) do
-    @id3 = ID3.new("./test_mp3_tag.mp3")
+    @id3 = ID3.new('./test_mp3_tag.mp3')
   end
 	
   it "should correctly identify the Artist" do
