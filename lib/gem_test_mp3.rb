@@ -2,7 +2,7 @@
 #
 #N. Woodward Mar 2014
 
-require "./lctr_mp3.rb"
+require 'lctr_mp3_gem (0.0.0)'
 
 if ARGV[0].nil? then 
   raise "This program requires you input a file name"

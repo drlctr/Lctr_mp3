@@ -1,6 +1,6 @@
 #mp3 id3 tag reader
 
-require 'id3_frame_ids.rb'
+require '../lib/id3_frame_ids.rb'
 
 class ID3
 

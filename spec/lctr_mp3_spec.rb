@@ -3,12 +3,12 @@
 #
 #N. Woodward, 18 Feb 2014
 
-require "./lib/lctr_mp3.rb"
+require "../lib/lctr_mp3.rb"
 
 describe ID3 do
 
   before (:each) do
-    @id3 = ID3.new("./02_Rumour_Has_It.mp3")
+    @id3 = ID3.new("./test_mp3_tag.mp3")
   end
 	
   it "should correctly identify the Artist" do
@@ -28,7 +28,7 @@ describe ID3 do
   end
 
   it "should correctly idenfity the file name of the song" do
-  	@id3.mp3_file.should eq "02_Rumour_Has_It.mp3"
+  	@id3.mp3_file.should eq "test_mp3_tag.mp3"
   end
 
   it "should correctly identify the path to the file" do
