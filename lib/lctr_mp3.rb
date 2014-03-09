@@ -1,10 +1,10 @@
 #mp3 id3 tag reader
 
-require './mp3_frame_ids.rb'
+require 'id3_frame_ids.rb'
 
 class ID3
 
-	attr_accessor :mp3_file, :song_title, :album_title, :artist, :track, :year, :song_length, :version, :flags, :path
+	attr_accessor :mp3_file, :song_title, :album_title, :artist, :track, :year, :song_length, :version, :flags, :path, :time
 
 	def initialize(file)
 		@file = file
