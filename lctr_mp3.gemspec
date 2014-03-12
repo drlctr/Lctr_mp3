@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name				= 'lctr_mp3_gem'
+  s.name				= 'lctr_mp3'
   s.version			= '0.0.0'
   s.date				= '2014-03-08'
   s.summary			= 'mp3 / id3 management tools'
